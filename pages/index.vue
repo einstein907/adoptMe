@@ -1,7 +1,27 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <Header />
+      <no-ssr> 
+        <carousel>
+          <slide>
+            Slide 1 Content
+          </slide>
+          <slide>
+            Slide 2 Content
+          </slide>
+          <slide>
+            Slide 3 Content
+          </slide>
+          <slide>
+            Slide 4 Content
+          </slide>
+          <slide>
+            Slide 5 Content
+          </slide>
+
+        </carousel>
+      </no-ssr>
       <h1 class="title">
         adoptMe
       </h1>
@@ -24,11 +44,27 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Header from '~/components/header.vue'
+// import { Carousel, Slide } from 'vue-carousel'
+import NoSSR from 'vue-no-ssr';
+
+// let pluginLib;
+
+// if (process.browser) {
+//   pluginLib = require('vue-carousel');
+// }
 
 export default {
   components: {
-    Logo
-  }
+    Logo,
+    Header,
+    // Carousel,
+    // Slide,
+    'no-ssr': NoSSR
+  },
+  // mounted() {
+  //   console.log(pluginLib);
+  // }
 }
 </script>
 
@@ -37,7 +73,7 @@ export default {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   text-align: center;
 }
 

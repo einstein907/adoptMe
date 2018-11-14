@@ -33,6 +33,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/vue-carousel', ssr: false } 
   ],
 
   /*
@@ -47,6 +48,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    // vendor: ['vue-carousel'],
     /*
     ** You can extend webpack config here
     */
@@ -57,7 +59,10 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
+          options: {
+            fix: true
+          }
         })
       }
     }
